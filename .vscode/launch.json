@@ -8,7 +8,8 @@
             "name": "Run Dosbox",
             "type": "f5anything",
             "request": "launch",
-            "command": "cmd /c \"cd ${workspaceFolder}\\src & ..\\env\\nasm -fbin anim.asm -oanim.com & if errorlevel 1 (echo error) else (..\\env\\dosbox.exe anim.com)\""
+            "cwd": "${workspaceFolder}",
+            "command": ".\\env\\buildandrun .\\src\\anim"
         }
     ]
 }
