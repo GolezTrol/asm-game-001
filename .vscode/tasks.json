@@ -10,8 +10,22 @@
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             }
+        },
+        {
+            "label": "Build and run",
+            "type": "shell",
+            "command": ".\\env\\buildandrun ${relativeFileDirname}\\${fileBasename}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "runOptions": {
+            },
         }
     ]
 }

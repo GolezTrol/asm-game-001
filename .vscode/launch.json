@@ -9,7 +9,7 @@
             "type": "f5anything",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "command": ".\\env\\buildandrun .\\src\\anim"
+            "command": ".\\env\\buildandrun ${relativeFileDirname}\\${fileBasename}"
         }
     ]
 }
