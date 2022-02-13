@@ -6,22 +6,19 @@
 ; =============================================================================
     org 100h
 
-    xor di, di
-
-    push 0a000h	; Set ES segment to A000
-    pop es
+    les bp,[bx]
 
     ; Init 320x200x256 colors	
-    mov al,0x13
+    mov al, 0x13
     int 0x10
-
-    mov al, 27h ; Draw red
-    call stripe
-    mov al, 0Fh ; Draw white
-    call stripe
-    mov al, 20h ; Draw blue
+    mov al, 0x28 ; Draw red
+    call  stripe
+    mov al, 0x1F ; Draw white (white enough to be close to blue)
+    call  stripe
+    inc ax
     ; No call here. Let it run. The ret is the program exit
 stripe:
-    mov cx, 21440
+    mov ch, 0x54
     rep stosb
     ret
+    
